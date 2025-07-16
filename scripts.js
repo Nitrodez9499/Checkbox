@@ -31,17 +31,12 @@ function loadCheckboxes() {
         checkbox.id = `checkbox-${i}`;
         checkbox.checked = checkboxState[`checkbox-${i}`] || false;
 
-        const label = document.createElement('label');
-        label.htmlFor = `checkbox-${i}`;
-        label.textContent = `Checkbox ${i}`;
-
         // Add event listener for checkbox changes
         checkbox.addEventListener('change', function () {
             saveCheckboxState(this.id, this.checked);
         });
 
         checkboxItem.appendChild(checkbox);
-        checkboxItem.appendChild(label);
         checkboxContainer.appendChild(checkboxItem);
     }
 }
